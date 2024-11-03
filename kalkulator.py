@@ -4,13 +4,14 @@ from src.Gracz import Gracz
 from src.Miasto import Miasto
 from src.Wyspa import Wyspa
 st.set_page_config(layout="wide")
-bonusy_stale_michal = [0.2, 0.67]
-bonusy_stale_bartek = bonusy_stale_michal
+bonusy_stale_michal = [0.2, 0.73]
+bonusy_stale_bartek = [0.2, 0.67]
 bonusy = {
     'Michal': {
         'kamulce': bonusy_stale_michal,
         'MaloKamulcy': bonusy_stale_michal,
         'AleLadnyKamien': bonusy_stale_michal,
+        'Kakakamien': bonusy_stale_michal,
         'Niwo': bonusy_stale_michal,
         'Wiwo': bonusy_stale_michal,
         'Szryktaly': bonusy_stale_michal,
@@ -26,7 +27,8 @@ bonusy = {
         'Skarpeta': bonusy_stale_bartek,
         'GoldenSzczoch': bonusy_stale_bartek,
         'Montelago': bonusy_stale_bartek,
-        'D_Day': bonusy_stale_bartek
+        'D_Day': bonusy_stale_bartek,
+        'Tempranillo': bonusy_stale_bartek
     }
 
 }
@@ -41,32 +43,34 @@ kamienie = Wyspa(lvl_kamien, 'kamienie')
 krysztaly = Wyspa(lvl_siarka, 'krysztaly')
 siarka = Wyspa(lvl_krysztal, 'siarka')
 
-SiopalniaKarki = Miasto('SiopalniaKarki', 308990, 20, siarka, bonusy=bonusy['Michal'])
-Rkasia = Miasto('Rkasia', 308990, 18, siarka, bonusy=bonusy['Michal'])
+SiopalniaKarki = Miasto('SiopalniaKarki', 308990, 21, siarka, bonusy=bonusy['Michal'])
+Rkasia = Miasto('Rkasia', 308990, 19, siarka, bonusy=bonusy['Michal'])
 
-Niwo = Miasto('Niwo', 308990, 20, wino, bonusy=bonusy['Michal'])
+Niwo = Miasto('Niwo', 308990, 21, wino, bonusy=bonusy['Michal'])
 Wiwo = Miasto('Wiwo', 308990, 20, wino, bonusy=bonusy['Michal'])
 
-Szryktaly = Miasto('Szryktaly', 308990, 17, krysztaly, bonusy=bonusy['Michal'])
+Szryktaly = Miasto('Szryktaly', 308990, 19, krysztaly, bonusy=bonusy['Michal'])
 Szkyrtaly = Miasto('Szkyrtaly', 308990, 17, krysztaly, bonusy=bonusy['Michal'])
 
-kamulce = Miasto('kamulce', 308990, 22, kamienie, bonusy=bonusy['Michal'])
-MaloKamulcy = Miasto('MaloKamulcy', 308990, 21, kamienie, bonusy=bonusy['Michal'])
-AleLadnyKamien = Miasto('AleLadnyKamien', 308990, 21, kamienie, bonusy=bonusy['Michal'])
+kamulce = Miasto('kamulce', 308990, 23, kamienie, bonusy=bonusy['Michal'])
+MaloKamulcy = Miasto('MaloKamulcy', 308990, 22, kamienie, bonusy=bonusy['Michal'])
+AleLadnyKamien = Miasto('AleLadnyKamien', 308990, 22, kamienie, bonusy=bonusy['Michal'])
+Kakakamien = Miasto('Kakakamien', 308990, 10, kamienie, bonusy=bonusy['Michal'])
 
 
 
-Hlep = Miasto('Hlep', 308990, 24, kamienie, bonusy=bonusy['Bartek'])
-Jeremiasz = Miasto('Jeremiasz', 308990, 22, kamienie, bonusy=bonusy['Bartek'])
+Hlep = Miasto('Hlep', 308990, 25, kamienie, bonusy=bonusy['Bartek'])
+Jeremiasz = Miasto('Jeremiasz', 308990, 25, kamienie, bonusy=bonusy['Bartek'])
 TrybunalKamienia = Miasto('TrybunalKamienia', 308990, 23, kamienie, bonusy=bonusy['Bartek'])
-miasto = Miasto('miasto', 308990, 20, kamienie, bonusy=bonusy['Bartek'])
+miasto = Miasto('miasto', 308990, 22, kamienie, bonusy=bonusy['Bartek'])
 
-GoldenSzczoch = Miasto('GoldenSzczoch', 308990, 22, wino, bonusy=bonusy['Bartek'])
-Montelago = Miasto('Montelago', 308990, 21, wino, bonusy=bonusy['Bartek'])
+GoldenSzczoch = Miasto('GoldenSzczoch', 308990, 25, wino, bonusy=bonusy['Bartek'])
+Montelago = Miasto('Montelago', 308990, 25, wino, bonusy=bonusy['Bartek'])
+Tempranillo = Miasto('Tempranillo', 308990, 25, wino, bonusy=bonusy['Bartek'])
 
-Skarpeta = Miasto('Montelago', 308990, 18, siarka, bonusy=bonusy['Bartek'])
+Skarpeta = Miasto('Montelago', 308990, 23, siarka, bonusy=bonusy['Bartek'])
 
-D_Day = Miasto('D_Day', 308990, 16, krysztaly, bonusy=bonusy['Bartek'])
+D_Day = Miasto('D_Day', 308990, 2, krysztaly, bonusy=bonusy['Bartek'])
 
 Michal = Gracz([SiopalniaKarki, kamulce, MaloKamulcy, Niwo, AleLadnyKamien, Szryktaly, Wiwo, Szkyrtaly, Rkasia])
 Bartek = Gracz([Hlep, Jeremiasz, TrybunalKamienia, miasto, GoldenSzczoch, Montelago, Skarpeta, D_Day])
