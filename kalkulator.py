@@ -89,23 +89,19 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.header("Siarka")
     for miasto in siarka.miasta:
-        st.text(miasto.id)
-        st.text(f"Produkcja drewna: {miasto.produkuj()}")
+        st.text(f"{miasto.id}: produkcja drewna: {miasto.produkuj()}")
 with col2:
     st.header("Marmur")
     for miasto in kamienie.miasta:
-        st.text(miasto.id)
-        st.text(f"Produkcja drewna: {miasto.produkuj()}")
+        st.text(f"{miasto.id}: produkcja drewna: {miasto.produkuj()}")
 with col3:
     st.header("Kryształ")
     for miasto in krysztaly.miasta:
-        st.text(miasto.id)
-        st.text(f"Produkcja drewna: {miasto.produkuj()}")
+        st.text(f"{miasto.id}: produkcja drewna: {miasto.produkuj()}")
 
 with col4:
     st.header("Wino")
     for miasto in wino.miasta:
-        st.text(miasto.id)
-        st.text(f"Produkcja drewna: {miasto.produkuj()}")
+        st.text(f"{miasto.id}: produkcja drewna: {miasto.produkuj()}")
 
 st.write(f"Suma produkcji drewna: {round(Michal.przelicz_drewno() + Bartek.przelicz_drewno(), 2)}")
